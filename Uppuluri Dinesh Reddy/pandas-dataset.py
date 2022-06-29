@@ -71,3 +71,28 @@ df['agent'].fillna(method='bfill', inplace=True)  # filling null values with bac
 # drop column
 df.drop(columns='company', axis=1, inplace=True)  # dropped this column because there are above 90% of null values
 print(df.isnull().sum())
+
+random_col = np.random.randint(100, size=len(df))
+df.insert(3, 'Random_col', random_col, allow_duplicates=False)
+print(df['Random_col'])
+
+# replacing the values
+df['checking'] = df['checking'].replace(to_replace=1, value=10)
+print(df['checking'])
+
+# checking the values in it or not
+values = [1, 10, 54, 60, 56]
+print(df[df['agent'].isin(values)])
+
+# using groupby on columns
+df1 = df.sample(n=500)
+grpby_hotel = df1.groupby('hotel').groups  # taking groupby sum on sample data
+print(grpby_hotel)
+
+# checking count of values in rows
+row_count = df.count(0)
+print(row_count)
+
+# checking the value count
+count_value = df['agent'].value_counts(ascending=True)  # this gives us each unique value count
+print(count_value)
