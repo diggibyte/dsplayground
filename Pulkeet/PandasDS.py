@@ -47,4 +47,16 @@ print(hotel.columns)
 hotel1 = hotel.insert(2,'XYZ',value=1)
 print(hotel1)
 print(hotel['XYZ'])
+#CHecking the col again
+print(hotel.columns)
+
+#length of dataset
+print(len(hotel))
+
+#Datatypes of feature
+print(hotel.dtypes)
+
+#Renaming the columns name
+print(hotel.rename(columns = {'meal':'meals','country':'countries'},inplace=True))
+print(hotel.columns)
 
