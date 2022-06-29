@@ -42,3 +42,9 @@ print(hotel.sort_values('reservation_status_date'))
 #Dropping the Features and checking the Feature Again
 print(hotel.drop('hotel',axis=1,inplace=True))
 print(hotel.columns)
+
+#Inserting new columns
+hotel1 = hotel.insert(2,'XYZ',value=1)
+print(hotel1)
+print(hotel['XYZ'])
+
