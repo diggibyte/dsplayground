@@ -1,6 +1,8 @@
+#Importing the Library for the Given Task
 import pandas as pd
 import numpy as np
 
+#Reading the Dataset using read_csv
 hotel = pd.read_csv(r'C:\Users\pulke\OneDrive\Desktop\hotel_bookings.csv')
 
 #Head of the Dataset
@@ -47,6 +49,7 @@ print(hotel.columns)
 hotel1 = hotel.insert(2,'XYZ',value=1)
 print(hotel1)
 print(hotel['XYZ'])
+
 #CHecking the col again
 print(hotel.columns)
 
