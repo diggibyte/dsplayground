@@ -60,3 +60,14 @@ print(hotel.dtypes)
 print(hotel.rename(columns = {'meal':'meals','country':'countries'},inplace=True))
 print(hotel.columns)
 
+#Checking the missing values
+print(hotel.isnull())
+print(hotel.isnull().sum())
+
+#Filling the missing value with 1
+print(hotel.fillna(1,inplace=True))
+print(hotel.isnull().sum())
+
+
+
+
