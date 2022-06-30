@@ -68,6 +68,17 @@ print(hotel.isnull().sum())
 print(hotel.fillna(1,inplace=True))
 print(hotel.isnull().sum())
 
+#Rank of the Features
+hotel_rank = hotel['lead_time'].rank()
+print(hotel_rank)
+
+#Crosstab Used for the frequency of the features
+hotel_cross_tab = pd.crosstab(hotel['lead_time'], hotel['company'])
+print(hotel_cross_tab)
+
+
+
+
 
 
 
