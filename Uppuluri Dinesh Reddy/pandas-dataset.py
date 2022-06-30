@@ -11,6 +11,18 @@ print(df.info())
 # checking the shape
 print(df.shape)
 
+# columns in dataset
+column = df.columns
+print(column)
+
+# len of dataset
+length_dataset = len(df)
+print(length_dataset)
+
+# checking data types
+data_types = df['agent'].dtypes()
+print(data_types)
+
 # checking the null value count
 print(df.isnull().sum())
 
@@ -64,7 +76,6 @@ children_col = df['children']
 print(children_col.unique())
 df['children'].fillna(method='bfill', inplace=True)  # filled null values with backfill values
 print(df['children'].describe())  # checking describe whether there is any change in statistical information
-
 df['country'].fillna(method='ffill', inplace=True)
 df['agent'].fillna(method='bfill', inplace=True)  # filling null values with backfill method
 
@@ -96,3 +107,20 @@ print(row_count)
 # checking the value count
 count_value = df['agent'].value_counts(ascending=True)  # this gives us each unique value count
 print(count_value)
+
+# rank
+df['rank_cal'] = df['agent'].rank()
+print(df['rank_cal'])
+
+# cross tab gives the frequency of two variables
+cros_tab = pd.crosstab(df['agent'], df['country'])
+print(cros_tab)
+
+largest = df.nlargest(n=5, columns='agent')
+print(largest)
+
+# gives n number of rows with smallest day in waiting list
+smallest = df.nsmallest(n=10, columns='days_in_waiting_list')
+print(smallest)
+# filling nan values in rank cal
+df['rank_cal'].fillna(df['rank_cal'].median(), inplace=True)
