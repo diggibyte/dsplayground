@@ -1,6 +1,8 @@
+#Importing the Library for the Given Task
 import pandas as pd
 import numpy as np
 
+#Reading the Dataset using read_csv
 hotel = pd.read_csv(r'C:\Users\pulke\OneDrive\Desktop\hotel_bookings.csv')
 
 #Head of the Dataset
@@ -47,4 +49,39 @@ print(hotel.columns)
 hotel1 = hotel.insert(2,'XYZ',value=1)
 print(hotel1)
 print(hotel['XYZ'])
+
+#CHecking the col again
+print(hotel.columns)
+
+#length of dataset
+print(len(hotel))
+
+#Datatypes of feature
+print(hotel.dtypes)
+
+#Renaming the columns name
+print(hotel.rename(columns = {'meal':'meals','country':'countries'},inplace=True))
+print(hotel.columns)
+
+#Checking the missing values
+print(hotel.isnull())
+print(hotel.isnull().sum())
+
+#Filling the missing value with 1
+print(hotel.fillna(1,inplace=True))
+print(hotel.isnull().sum())
+
+#Rank of the Features
+hotel_rank = hotel['lead_time'].rank()
+print(hotel_rank)
+
+#Crosstab Used for the frequency of the features
+hotel_cross_tab = pd.crosstab(hotel['lead_time'], hotel['company'])
+print(hotel_cross_tab)
+
+
+
+
+
+
 
