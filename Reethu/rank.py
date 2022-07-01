@@ -8,6 +8,7 @@ print(df.sort_values('hotel').head())
 #isin method
 print(df['country'].unique())
 df1 = df['country'].isin(['RUS','PRT','GBR'])
+print(df1)
 print(df[df1])
 print(df[df1].iloc[:,12:16])
 
