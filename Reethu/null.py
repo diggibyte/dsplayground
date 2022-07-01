@@ -7,7 +7,7 @@ print(df.isnull().sum())#to find no.of null values in each column
 print(df.isnull().sum().sum())#to find no.of null values in the data set
 
 #to fill null values
-print(df.fillna('XYZ'))
-df1 = df['country'].isin({'XYZ'})
+print(df.fillna('XYZ',inplace = True))
+df1 = df['country'][df['country'].isin({'XYZ'})]
 print(df1)
 print(df[df1])
