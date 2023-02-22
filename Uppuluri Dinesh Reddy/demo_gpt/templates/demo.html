@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GPT-3 Web App</title>
+     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <h1>GPT-3 Web App</h1>
+    <form method="post" action="/">
+      <div class="container">
+        <div>
+           <label for="question">Enter your question:</label><br>
+            <textarea name="question" rows="3" cols="50"></textarea><br>
+        </div>
+
+        <div class="submit-button">
+           <input type="submit" value="Submit">
+        </div>
+
+      </div>
+
+    </form>
+    <div class="data">
+      {% if inputs %}
+        <p>{{ inputs }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
