@@ -1,12 +1,12 @@
 import openai
 import pandas as pd
-import os
-from flask import Flask,render_template, request
+from flask import Flask, render_template, request
 
-openai.api_key = "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"
-app=Flask(__name__)
+openai.api_key = ""
+app = Flask(__name__)
 
-@app.route('/', methods=['GET','POST'])
+
+@app.route('/', methods=['GET', 'POST'])
 def gpt3_response():
     if request.method == 'POST':
         df = pd.read_csv(r'C:\Users\UppuluriDineshReddy\Downloads\data_gpt3.csv')
@@ -28,10 +28,10 @@ def gpt3_response():
                     stop=None)
 
         res = response.choices[0].text
-        return render_template('demo.html', inputs=res)
+        return render_template('demo.html', inputs=res, question=query)
 
     return render_template('demo.html')
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     app.run(debug=True)
