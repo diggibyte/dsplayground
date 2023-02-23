@@ -5,25 +5,25 @@
      <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
   </head>
   <body>
-    <h1>Virtual Data Assistance</h1>
-    <form method="post" action="/">
-      <div class="container">
-        <div>
-           <label for="question">Enter your question:</label><br>
-            <textarea name="question" rows="3" cols="50">{{question}}</textarea><br>
+        <div class="main-container">
+
+        <h1 class="heading">Virtual Data Assistance</h1>
+        <form method="post" action="/">
+          <div class="container">
+            <div>
+              <label for="question">Enter your question:</label><br />
+              <input name="question" value="{{ques}}"/><br />
+            </div>
+            <div class="submit-button">
+              <input type="submit" value="Submit" />
+            </div>
+            <p  class="content">
+              {% if inputs %}
+             <p class="data">{{ inputs }}</p>
+              {% endif %}
+              </p>
+          </div>
+        </form>
         </div>
-
-        <div class="submit-button">
-           <input type="submit" value="Submit">
-        </div>
-
-      </div>
-
-    </form>
-    <div class="data">
-      {% if inputs %}
-        <p>{{ inputs }}</p>
-      {% endif %}
-    </div>
   </body>
 </html>

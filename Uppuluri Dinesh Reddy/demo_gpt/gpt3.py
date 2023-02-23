@@ -2,7 +2,7 @@ import openai
 import pandas as pd
 from flask import Flask, render_template, request
 
-openai.api_key = ""
+openai.api_key = "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"
 app = Flask(__name__)
 
 
@@ -28,7 +28,7 @@ def gpt3_response():
                     stop=None)
 
         res = response.choices[0].text
-        return render_template('demo.html', inputs=res, question=query)
+        return render_template('demo.html', inputs=res, ques=query)
 
     return render_template('demo.html')
 
