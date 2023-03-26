@@ -1,0 +1,117 @@
+body {
+  background-color: rgb(255, 255, 255);
+    height: 100vh;
+
+ }
+
+img {
+  height: 230px;
+  width: 300px;
+}
+.heading {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  background: linear-gradient(
+    90deg,
+    rgb(110, 100, 248) 0%,
+    rgb(249, 107, 121) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /* background-color: #ffffff; */
+  width: 100%;
+}
+.container input {
+  width: 500px;
+}
+
+.search-box,
+.close-icon {
+  position: relative;
+  padding: 10px;
+}
+.search-box {
+  font-size: 16px;
+  width: 80%;
+  border: 1px solid #ccc;
+  outline: 0;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.search-box:focus {
+  /* box-shadow: 0 0 15px 5px #b0e0ee; */
+  border: 2px solid #6e6e6f;
+}
+.close-icon {
+  border: 1px solid transparent;
+  background-color: transparent;
+  display: inline-block;
+  vertical-align: middle;
+  outline: 0;
+  cursor: pointer;
+}
+.close-icon:after {
+  content: "X";
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background-color: rgb(85, 85, 86);
+  z-index: 1;
+  right: 35px;
+  /* top: 0; */
+  bottom: 0;
+  margin: auto;
+  padding: 2px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: 0 0 2px #f9cfcf;
+  cursor: pointer;
+}
+.search-box:not(:valid) ~ .close-icon {
+  display: none;
+}
+.data {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  width: 500px;
+}
+.content{
+  max-width: 80%;
+  align-items: center;
+  margin-left: 10%;
+  line-height: 30px;
+    text-align: justify;
+    font-size: 20px;
+}
+.submit-button {
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  /* background: linear-gradient(
+    90deg,
+    rgba(129, 230, 217, 1) 0%,
+    rgba(79, 209, 197, 1) 100%
+  ); */
+  background-color: rgb(63, 63, 63);
+  border: none;
+  color: rgb(229, 229, 231);
+}
+.submit-button:hover,
+.submit-button:focus {
+ background-color: rgb(21, 21, 21);
+ color: white;
+}
