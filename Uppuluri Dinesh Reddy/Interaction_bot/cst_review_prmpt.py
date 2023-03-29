@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from flask import Flask, render_template, request
 
-openai.api_key = "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"
+openai.api_key = ""
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
