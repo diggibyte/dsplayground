@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>GPT-3 Web App</title>
-<!--    <link rel="stylesheet" href="style.css" />-->
-     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
-  </head>
-  <body>
+<!--   <link rel="stylesheet" href="style4.css" />-->
+      <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+
+<body>
     <div class="main-container">
-      <div class="form-section">
-        <form method="post" action="/">
-          <div >
+        <div class="form-section">
+            <form method="post" action="/">
 
+                <div class="container">
 
-          </div>
-          <div class="container">
+                    <img class="logo" src="/static/ImageFolder/DB_logo.png" alt="logo" />
+                    <div class="search-box">
+                        <div class="search-container">
+                            <input name="question" value="{{ques}}" required class="search-box-input" placeholder="Enter your question"/>
+                            <button class="close-icon" type="clear" name="clear" value="Clear"></button>
 
-              <h1 class="heading">ChatGPT</h1>
+                        </div>
+                             <button class="submit-button" type="submit" value="Submit">
+                             GO
+                             </button>
+                        </div>
 
+                    <div style="width: 580px;">
+                        <p><span class="text-head">ChatGPT</span> <span class="sub-head">- Powered by Openai</span><br>
+                            <span class="text-p">Virtual Data Assistance is built on top of open AI’s GPT3 family of large language
+                                model. This results in a better response for your customer's question!</span></p>
 
-
-            <img class="logo" src="\static\ImageFolder\ELC_Logo.svg" />
-
-            <div>
-
-              <input
-                type="text"
-                name="question"
-                 value="{{ques}}"
-                required
-                class="search-box"
-                placeholder="Enter your question" />
-              <button class="close-icon" type="clear" name="clear" value="Clear"></button
-              ><button class="submit-button" type="submit" value="Submit">
-                GO
-              </button>
-            </div>
-            <div>
-
-            </div>
-             </div>
-              <p  class="content">
-              {% if inputs %}
-             <p class="content">{{ inputs }}</p>
-              {% endif %}
-              </p>
-
-        </form>
-      </div>
+                    </div>
+                </div>
+                <p class="content">
+                    {% if inputs %}
+                <p class="content">{{ inputs }}</p>
+                {% endif %}
+                </p>
+            </form>
+        </div>
     </div>
-  </body>
+</body>
+
 </html>
