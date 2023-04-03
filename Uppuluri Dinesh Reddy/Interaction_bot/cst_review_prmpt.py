@@ -3,13 +3,13 @@ import os
 import pandas as pd
 from flask import Flask, render_template, request
 
-openai.api_key = ""
+openai.api_key = "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"
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def gpt3_response():
     if request.method == 'POST':
-        df = pd.read_csv(r'C:\Users\ReethuAnnieThomas\Downloads\amazon_review_demo.csv')
+        df = pd.read_csv(r'C:\Users\ReethuAnnieThomas\Downloads\sales_demo_data(modified).csv')
         df.dropna()
         df1 = df.iloc[:15]
 
